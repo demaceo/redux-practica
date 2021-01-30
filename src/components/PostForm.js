@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createPost } from "../actions/postActions";
+import './PostForm.css';
 
 class PostForm extends Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class PostForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="add-task-form">
         <h1>Add Task</h1>
         <form onSubmit={this.onSubmit}>
           <div>
@@ -56,7 +57,7 @@ class PostForm extends Component {
             />
           </div>
           <br />
-          <button type="submit">Submit</button>
+          <button className='btn' type="submit">Submit</button>
         </form>
       </div>
     );
