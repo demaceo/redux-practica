@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchPosts } from "../actions/postActions";
+import './Posts.css';
 
 class Posts extends Component {
   componentWillMount() {
@@ -16,15 +17,17 @@ class Posts extends Component {
 
   render() {
     const postItems = this.props.posts.map((post) => (
-      <div key={post.id}>
-        <h3>{post.title}</h3>
-        <p>{post.body}</p>
-      </div>
+      <section className="postContainer">
+        <div className="postItem" key={post.id}>
+          <h3>{post.title}</h3>
+          <p>{post.body}</p>
+        </div>
+      </section>
     ));
     return (
       <div>
-        <h1>Posts</h1>
-        {postItems}
+        <h1>To-Do's</h1>
+        <section className="posts"> {postItems}</section>
       </div>
     );
   }
